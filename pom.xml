@@ -17,10 +17,11 @@
 
     <modules>
         <module>spring-webflux-plain-java-example</module>
+        <module>spring-webflux-kotlin-example</module>
     </modules>
 
     <properties>
-        <spring-cloud.version>2022.0.3</spring-cloud.version>
+        <spring-cloud.version>2022.0.4</spring-cloud.version>
     </properties>
 
     <dependencies>

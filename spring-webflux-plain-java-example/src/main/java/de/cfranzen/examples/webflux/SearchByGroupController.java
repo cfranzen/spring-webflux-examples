@@ -21,7 +21,6 @@ public class SearchByGroupController {
     @GetMapping("/search/customerGroup/{customerGroup}")
     public Flux<Customer> findByCustomerGroup(@PathVariable final String customerGroup) {
         return client.getCustomerGroup(customerGroup)
-                .log()
                 .flatMapMany(group ->
                         Flux.concat(
                                 group.entries()

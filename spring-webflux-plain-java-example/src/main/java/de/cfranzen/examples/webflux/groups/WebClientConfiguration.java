@@ -10,7 +10,7 @@ public class WebClientConfiguration {
     @Bean
     public WebClient webClient(WebClient.Builder builder, ClientProperties properties) {
         return builder
-                .baseUrl(properties.getUrl())
+                .baseUrl(properties.url())
                 .build();
     }
 

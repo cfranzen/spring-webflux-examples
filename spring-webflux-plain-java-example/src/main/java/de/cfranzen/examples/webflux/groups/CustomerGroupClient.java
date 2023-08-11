@@ -14,7 +14,8 @@ public class CustomerGroupClient {
     }
 
     public Mono<CustomerGroup> getCustomerGroup(String name) {
-        return webClient.get()
+        return webClient
+                .get()
                 .uri(uriBuilder -> uriBuilder
                         .path("/api/customerGroup/{name}")
                         .build(name))

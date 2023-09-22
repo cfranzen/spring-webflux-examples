@@ -27,7 +27,7 @@ public class SearchByGroupController {
                                         .stream()
                                         .map(entry -> repository.findByFirstNameAndLastNameAllIgnoreCase(entry.firstName(), entry.lastName()))
                                         .toList()
-                        ).log()
+                        )
                 );
     }
 }

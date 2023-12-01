@@ -8,5 +8,6 @@ internal class ApplicationTest {
 
     @Test
     fun contextLoads() {
+        // Nothing do to here, we just want to see that Spring context is able to load
     }
 }

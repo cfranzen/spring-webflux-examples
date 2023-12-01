@@ -16,7 +16,7 @@ class CustomerControllerTest {
     private WebTestClient client;
 
     @Test
-    public void testCreationOfCustomer() {
+    void testCreationOfCustomer() {
         // Given
         final var request = new CustomerCreationRequest("Peter", "Pan");
 

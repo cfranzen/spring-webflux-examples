@@ -7,19 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
 
 @RestController
-public class SearchByGroupController {
+class SearchByGroupController {
 
     private final CustomerGroupClient client;
 
     private final CustomerRepository repository;
 
-    public SearchByGroupController(final CustomerGroupClient client, final CustomerRepository repository) {
+    SearchByGroupController(final CustomerGroupClient client, final CustomerRepository repository) {
         this.client = client;
         this.repository = repository;
     }
 
     @GetMapping("/search/customerGroup/{customerGroup}")
-    public Flux<Customer> findByCustomerGroup(@PathVariable final String customerGroup) {
+    Flux<Customer> findByCustomerGroup(@PathVariable final String customerGroup) {
         return client.getCustomerGroup(customerGroup)
                 .flatMapMany(group ->
                         Flux.concat(

@@ -24,7 +24,7 @@ class CustomerRepositoryTest {
         repository.saveAll(List.of(c1, c2, c3)).blockLast();
 
         // when
-        final var result = repository.findByFirstNameAndLastNameAllIgnoreCase(c1.getFirstName(), c1.getLastName());
+        final var result = repository.findByFirstNameAndLastName(c1.getFirstName(), c1.getLastName());
 
         // then
         assertThat(result.toStream().toList())

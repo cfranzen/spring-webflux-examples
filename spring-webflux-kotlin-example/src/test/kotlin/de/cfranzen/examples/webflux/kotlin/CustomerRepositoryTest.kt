@@ -22,7 +22,7 @@ internal class CustomerRepositoryTest(
         repository.saveAll(listOf(c1, c2, c3)).collect()
 
         // when
-        val result = repository.findByFirstNameAndLastNameAllIgnoreCase(
+        val result = repository.findByFirstNameAndLastName(
             firstName = c1.firstName,
             lastName = c1.lastName
         )

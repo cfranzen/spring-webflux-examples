@@ -7,5 +7,5 @@ import reactor.core.publisher.Flux;
 @Repository
 public interface CustomerRepository extends R2dbcRepository<Customer, Long> {
 
-    Flux<Customer> findByFirstNameAndLastNameAllIgnoreCase(String firstName, String lastName);
+    Flux<Customer> findByFirstNameAndLastName(String firstName, String lastName);
 }

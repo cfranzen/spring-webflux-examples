@@ -18,7 +18,7 @@ internal class SearchByGroupController(
         val group = client.getCustomerGroup(customerGroup)
         return group
             .entries
-            .map { repository.findByFirstNameAndLastNameAllIgnoreCase(it.firstName, it.lastName) }
+            .map { repository.findByFirstNameAndLastName(it.firstName, it.lastName) }
             .merge()
     }
 }

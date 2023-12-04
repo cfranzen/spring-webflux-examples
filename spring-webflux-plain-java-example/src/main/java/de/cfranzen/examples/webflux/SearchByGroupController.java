@@ -25,7 +25,7 @@ class SearchByGroupController {
                         Flux.concat(
                                 group.entries()
                                         .stream()
-                                        .map(entry -> repository.findByFirstNameAndLastNameAllIgnoreCase(entry.firstName(), entry.lastName()))
+                                        .map(entry -> repository.findByFirstNameAndLastName(entry.firstName(), entry.lastName()))
                                         .toList()
                         )
                 );

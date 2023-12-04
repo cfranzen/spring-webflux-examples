@@ -7,5 +7,5 @@ import org.springframework.stereotype.Repository
 @Repository
 interface CustomerRepository : CoroutineCrudRepository<Customer, Long> {
 
-    suspend fun findByFirstNameAndLastNameAllIgnoreCase(firstName: String, lastName: String): Flow<Customer>
+    suspend fun findByFirstNameAndLastName(firstName: String, lastName: String): Flow<Customer>
 }

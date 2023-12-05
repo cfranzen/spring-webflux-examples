@@ -1,7 +1,8 @@
 package de.cfranzen.examples.webflux.kotlin
 
 import de.cfranzen.examples.webflux.kotlin.groups.CustomerGroupClient
-import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.emitAll
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.merge
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -14,11 +15,11 @@ internal class SearchByGroupController(
 ) {
 
     @GetMapping("/search/customerGroup/{customerGroup}")
-    suspend fun findByCustomerGroup(@PathVariable customerGroup: String): Flow<Customer> {
+    fun findByCustomerGroup(@PathVariable customerGroup: String) = flow {
         val group = client.getCustomerGroup(customerGroup)
-        return group
+        emitAll(group
             .entries
             .map { repository.findByFirstNameAndLastName(it.firstName, it.lastName) }
-            .merge()
+            .merge())
     }
 }

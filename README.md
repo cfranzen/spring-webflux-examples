@@ -1,2 +1,2 @@
 # Examples for Reactive Programming with Spring Webflux and Kotlin Coroutines
-You can find my blog post on this topic here: https://blog.codecentric.de/
+You can find our (German) blog post on this topic here: https://www.codecentric.de/wissens-hub/blog/ein-tolles-paar-spring-webflux-und-kotlin-coroutines

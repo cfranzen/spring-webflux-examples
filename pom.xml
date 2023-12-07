@@ -18,10 +18,13 @@
     <modules>
         <module>spring-webflux-plain-java-example</module>
         <module>spring-webflux-kotlin-example</module>
+        <module>spring-mvc-plain-java-example</module>
     </modules>
 
     <properties>
-        <spring-cloud.version>2022.0.4</spring-cloud.version>
+        <spring-cloud.version>2023.0.0</spring-cloud.version>
+        <java.version>17</java.version>
+        <kotlin.version>1.9.21</kotlin.version>
     </properties>
 
     <dependencies>

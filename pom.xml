@@ -22,7 +22,7 @@
     </modules>
 
     <properties>
-        <spring-cloud.version>2023.0.0</spring-cloud.version>
+        <spring-cloud.version>2023.0.1</spring-cloud.version>
         <java.version>17</java.version>
         <kotlin.version>1.9.23</kotlin.version>
     </properties>

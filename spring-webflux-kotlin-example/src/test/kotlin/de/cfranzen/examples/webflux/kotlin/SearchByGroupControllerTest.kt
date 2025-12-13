@@ -1,8 +1,6 @@
 package de.cfranzen.examples.webflux.kotlin
 
-import com.github.tomakehurst.wiremock.client.WireMock.get
-import com.github.tomakehurst.wiremock.client.WireMock.okJson
-import com.github.tomakehurst.wiremock.client.WireMock.stubFor
+import com.github.tomakehurst.wiremock.client.WireMock.*
 import com.github.tomakehurst.wiremock.common.Json
 import de.cfranzen.examples.webflux.kotlin.groups.CustomerGroup
 import de.cfranzen.examples.webflux.kotlin.groups.CustomerGroupEntry
@@ -11,14 +9,17 @@ import kotlinx.coroutines.test.runTest
 import org.assertj.core.api.Assertions
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
 import org.springframework.boot.test.context.SpringBootTest
-import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock
+import org.springframework.boot.webtestclient.autoconfigure.AutoConfigureWebTestClient
 import org.springframework.test.web.reactive.server.WebTestClient
+import org.wiremock.spring.EnableWireMock
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(
+    webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
+    properties = [$$"groups.client.url=http://localhost:${wiremock.server.port}"]
+)
 @AutoConfigureWebTestClient
-@AutoConfigureWireMock(port = 0)
+@EnableWireMock
 internal class SearchByGroupControllerTest(
     @Autowired private val client: WebTestClient,
     @Autowired private val repository: CustomerRepository

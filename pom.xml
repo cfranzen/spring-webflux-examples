@@ -1,57 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.0</version>
-    </parent>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>4.0.0</version>
+  </parent>
 
-    <groupId>de.cfranzen</groupId>
-    <artifactId>spring-webflux-examples</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+  <groupId>de.cfranzen</groupId>
+  <artifactId>spring-webflux-examples</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
 
-    <modules>
-        <module>spring-webflux-plain-java-example</module>
-        <module>spring-webflux-kotlin-example</module>
-        <module>spring-mvc-plain-java-example</module>
-    </modules>
+  <modules>
+    <module>spring-webflux-plain-java-example</module>
+    <module>spring-webflux-kotlin-example</module>
+    <module>spring-mvc-plain-java-example</module>
+  </modules>
 
-    <properties>
-        <spring-cloud.version>2025.1.0</spring-cloud.version>
-        <java.version>21</java.version>
-        <kotlin.version>2.2.21</kotlin.version>
-    </properties>
+  <properties>
+    <java.version>21</java.version>
+    <kotlin.version>2.2.21</kotlin.version>
+    <wiremock.version>4.0.8</wiremock.version>
+  </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-configuration-processor</artifactId>
-            <optional>true</optional>
-        </dependency>
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-resolver-dns-native-macos</artifactId>
-            <version>4.2.8.Final</version>
-            <classifier>osx-aarch_64</classifier>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-configuration-processor</artifactId>
+      <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>io.netty</groupId>
+      <artifactId>netty-resolver-dns-native-macos</artifactId>
+      <version>4.2.8.Final</version>
+      <classifier>osx-aarch_64</classifier>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
 
 </project>

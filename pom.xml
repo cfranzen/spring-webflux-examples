@@ -24,7 +24,7 @@
   <properties>
     <java.version>21</java.version>
     <kotlin.version>2.3.0</kotlin.version>
-    <wiremock.version>4.0.8</wiremock.version>
+    <wiremock.version>4.0.9</wiremock.version>
   </properties>
 
   <dependencies>
